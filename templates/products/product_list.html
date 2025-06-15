@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product List</title>
+</head>
+<body>
+    <h1>Product List</h1>
+
+    <!-- Filter Form -->
+    <form method="get" action=".">
+        <label for="search">Search:</label>
+        <input type="text" id="search" name="search" value="{{ request.GET.search }}">
+
+        <label for="category">Category ID:</label>
+        <input type="text" id="category" name="category__id" value="{{ request.GET.category__id }}">
+
+        <label for="tags">Tag IDs (comma-separated):</label>
+        <input type="text" id="tags" name="tags__id" value="{{ request.GET.tags__id }}">
+
+        <button type="submit">Apply Filters</button>
+    </form>
+
+    <!-- Products -->
+    <ul>
+        {% for product in products %}
+            <li>
+                <strong>{{ product.name }}</strong><br>
+                Category ID: {{ product.category.id }}<br>
+                Tags:
+                <ul>
+                    {% for tag in product.tags.all %}
+                        <li>{{ tag.name }} (ID: {{ tag.id }})</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% empty %}
+            <li>No products found.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
