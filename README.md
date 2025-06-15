@@ -62,3 +62,5 @@ http://localhost:8000/products/html/
 python manage.py test
 ```
 
+## AI usage
+I used AI for code completion, asking questions, writing viewset, and models.
