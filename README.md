@@ -28,24 +28,24 @@ git clone git@github.com:abdirakhman/remarcable-take-home.git
 ```
 pip install -r requirements.txt
 ```
-1. Run migrations
+4. Run migrations
 ```
 python manage.py makemigrations
 python manage.py migrate
 ```
-1. **Create a superuser**
+5. **Create a superuser**
 ```
 python manage.py createsuperuser
 ```
-1. **Load sample data (optional)**
+6. **Load sample data (optional)**
 ```
 python create_sample_data.py
 ```
-1. **Run the development server**
+7. **Run the development server**
 ```
 python manage.py runserver
 ```
-1. **Access the application**
+8. **Access the application**
 
 Main application: http://localhost:8000/
 
